@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.util.Log;
 import android.util.SparseArray;
+import android.widget.Toast;
 
 import com.google.android.gms.vision.Frame;
 import com.google.android.gms.vision.face.Face;
@@ -25,8 +26,18 @@ public class Emojifier {
 
         SparseArray<Face> faces = faceDetector.detect(frame);
 
+        Log.d(TAG, " ");
         Log.d(TAG, "#############################################################");
-        Log.d(TAG, "Number of faces detected: " + String.valueOf(faces.size()));
+        Log.d(TAG, "# Number of faces detected: " + String.valueOf(faces.size()));
         Log.d(TAG, "#############################################################");
+        Log.d(TAG, " ");
+
+        if (faces.size() == 0) {
+            Toast.makeText(context, "No Faces Detected", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(context, String.valueOf(faces.size()) + " Faces Detected", Toast.LENGTH_SHORT).show();
+        }
+
+        faceDetector.release();
     }
 }
