@@ -62,7 +62,7 @@ class Emojifier {
 
                 // Log the classification probabilities for each face.
                 whichEmoji(face);
-                // TODO (6): Change the call to whichEmoji to whichEmoji() to log the appropriate emoji for the facial expression.
+                // TODO/COMPLETED (6): Change the call to whichEmoji to whichEmoji() to log the appropriate emoji for the facial expression.
             }
 
         }
